@@ -1,0 +1,31 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: taskqueue-postgres
+    environment:
+      POSTGRES_USER: queue_user
+      POSTGRES_PASSWORD: queue_pass
+      POSTGRES_DB: taskqueue
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U queue_user -d taskqueue"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+
+  redis:
+    image: redis:7
+    container_name: taskqueue-redis
+    ports:
+      - "6379:6379"
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+
+volumes:
+  postgres_data:
