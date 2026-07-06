@@ -48,7 +48,7 @@ ON jobs(idempotency_key)
 WHERE idempotency_key IS NOT NULL;
 
 CREATE INDEX idx_jobs_dequeue
-ON jobs(status, run_at, priority DESC)
+ON jobs(run_at, priority DESC)
 WHERE status = 'queued';
 
 CREATE INDEX idx_jobs_locked_until
