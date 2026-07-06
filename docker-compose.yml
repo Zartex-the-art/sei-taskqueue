@@ -10,6 +10,8 @@ services:
       - "5432:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
+    networks:
+      - taskqueue-net
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U queue_user -d taskqueue"]
       interval: 5s
@@ -29,3 +31,6 @@ services:
 
 volumes:
   postgres_data:
+networks:
+  taskqueue-net:
+    driver: bridge
