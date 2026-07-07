@@ -12,6 +12,13 @@ and crash recovery.
 ## Architecture
 (Diagram + explanation — Day 4 onward)
 
+The system uses a Queue Interface to separate workers from the underlying PostgreSQL implementation. Workers interact only with the queue interface to dequeue jobs and acknowledge completed work, while the queue interface manages database operations internally. The design decision is documented in ADR-009.
+
+See the sequence diagram for the interaction flow:
+
+- Queue Interface Flow: `docs/diagrams/queue-interface-flow.png`
+- ADR-009: `docs/decisions/0009-queue-interface.md`
+
 ## API Reference
 (Filled in starting Day 7)
 
