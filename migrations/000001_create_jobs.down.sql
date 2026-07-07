@@ -1,0 +1,2 @@
+DROP TABLE IF EXISTS dead_jobs;
+DROP TABLE IF EXISTS jobs;
