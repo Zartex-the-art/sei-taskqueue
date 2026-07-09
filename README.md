@@ -42,3 +42,12 @@ See `docs/decisions/` — index maintained here as ADRs land.
 
 ## What We'd Do at 10x Scale
 (Filled in Day 23)
+
+
+# System Container Map – v1 (Day 3 draft)
+
+This is a forward-looking diagram showing the architecture expected after Day 4, where the application, PostgreSQL, and Redis run together using Docker Compose.
+
+Currently only PostgreSQL and Redis are available in Compose. The application container image was built on Day 3 and will join the network on Day 4.
+
+PostgreSQL is the system of record. Redis is present, but its final role is intentionally left undecided and will be finalized later in the project.
