@@ -1,0 +1,16 @@
+# Backend
+/internal/queue/ @Gayathri13006
+/internal/worker/ @Gayathri13006
+/internal/store/ @Gayathri13006
+
+# Tests
+/tests/ @Gayathri13006
+
+# Infrastructure
+/docker-compose.yml @haricharan-18
+/ops/ @haricharan-18
+/.github/workflows/ @haricharan-18
+
+# Documentation
+/docs/ @chukkavishnuvardhan
+*.md @chukkavishnuvardhan
